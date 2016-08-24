@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<core:SmmModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/spec/XMI">
+<libraries category:"Basicas">
+    <measure>
+        <name>NumberOfMethods</name>
+        <label>NOM</label>
+        <description>Returns the number of methods.</description>         
+        <trait>Counting</trait>
+        <scope>Class</scope>
+        <labelFormat></labelFormat>
+        <category>Direct</category>
+        <unit>Methods</unit>
+        <operation>
+            <language>XPath</language>
+            <expression>//ownedParameter</expression>
+        </operation>
+    </measure>
+    <measure>
+        <name>NumberOfVaritionPointClasses</name>
+        <label>NOVPC</label>
+        <description>Returns the number of Classes that are variation point.</description>         
+        <trait>Counting</trait>
+        <scope>Class</scope>
+        <labelFormat></labelFormat>
+        <category>Collective</category>
+        <unit>Classes</unit>
+        <accumulator></accumulator>
+        <operation>
+            <language>XPath</language>
+            <expression></expression>
+        </operation>
+    </measure>
+    <measure>
+        <name>NumberOfVariantsClasses</name>
+        <label>NOVC</label>
+        <description>Returns the number of Variants Classes.</description>         
+        <trait>Counting</trait>
+        <scope>Class</scope>
+        <labelFormat></labelFormat>
+        <category>Collective</category>
+        <unit>Classes</unit>
+        <accumulator></accumulator>
+        <operation>
+            <language>XPath</language>
+            <expression></expression>
+        </operation>
+    </measure>
+    <measure>
+        <name>NumberOfVariabilitiesClasses</name>
+        <label>NOfVC_2</label>
+        <description>Returns the number of Variabilities Classes.</description>         
+        <trait>Counting</trait>
+        <scope>Class</scope>
+        <labelFormat></labelFormat>
+        <category>Binary</category>
+        <unit>Classes</unit>
+        <function>NOCV + NOfCV</function>
+        <operation>
+            <language>XPath</language>
+            <expression></expression>
+        </operation>
+    </measure>
+    <measure>
+        <name>NumberOfClasses</name>
+        <label>NOC</label>
+        <description>Returns the number of Classes.</description>         
+        <trait>Counting</trait>
+        <scope>Class</scope>
+        <labelFormat></labelFormat>
+        <category>Direct</category>
+        <unit>Classes</unit>
+        <operation>
+            <language>XPath</language>
+            <expression></expression>
+        </operation>
+    </measure>
+    <measure>
+        <name>Percentage of Variability Classes</name>
+        <label>POVC</label>
+        <description>Returns the percentage of Variabilities Diagram Class.</description>
+        <trait>Percentage</trait>
+        <scope>Class</scope>
+        <labelFormat></labelFormat>
+        <category>Ratio</category>
+        <unit>Classes</unit>
+        <function>NOVPC / NOC</function>
+        <constraint>/</constraint>
+        <operation>
+            <language>XPath</language>
+            <expression></expression>
+        </operation>
+    </measure>
+    <measure>
+        <name>IsVariationPoint</name>
+        <label>IVP</label>
+        <description>Returns if the Class is a Variation Point. It returns 1 it is, 0 it isn't.</description>         
+        <trait>VariationPoint</trait>
+        <scope>Class</scope>
+        <labelFormat></labelFormat>
+        <category>Counting</category>
+        <unit>Class</unit>
+        <operation>
+            <language>XPath</language>
+            <expression></expression>
+        </operation>
+    </measure>
+</libraries>

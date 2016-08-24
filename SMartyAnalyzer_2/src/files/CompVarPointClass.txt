@@ -1,0 +1,30 @@
+<metrics>
+    <metric name="CompVarPointClass" domain="class" category="variation point" internal="">
+        <description>É o valor da métrica CompClass, da classe que é um ponto de variação mais a soma da métrica CompClass de cada variante associada à classe.</description>
+        <compoundmetric term="CompVarPointIsolated + CompVariantInc + CompVariantExc + CompVariantOpt + CompVariantMnd + CompInterfaceVariantsInc + CompInterfaceVariantsExc + CompInterfaceVariantsOpt + CompInterfaceVariantsMnd" alt="0" fallback="0"/>
+    </metric>
+    <metric name="CompVariabilityClass" domain="class" category="complexity" internal="">
+        <description>É a soma da medida da métrica CompVarPointClass de cada ponto de variação de uma determinada variabilidade</description>
+        <compoundmetric term="CompVariationPointsVariabilityClass + CompVariationPointsVariabilityInterface" alt="0" fallback="0"/>
+    </metric>
+    <metric name="CompVarComponent" domain="class" category="complexity" internal="">
+        <description>É a soma da métrica CompVariabilityClass de cada classe que forma um componente. (Resultado da Métrica CompVariabilityComponent).</description>
+        <compoundmetric term="CompVariabilityComponent" alt="0" fallback="0" />
+    </metric>
+    <metric name="CompPLA" domain="class" category="complexity" internal="">
+        <description>É o nível geral de complexidade da ALP, sendo a soma dos valores métricas CompVarComponent de cada componente da ALP.</description>
+        <compoundmetric term="CompComponentsPLA" alt="0" fallback="0" />
+    </metric>
+    <measure name="CompVarComponent" type="collectiveMeasure" description="métrica para encontrar o total das complexidades em um <componente">
+        <atributeType="accumulator" type="collectiveMeasure" class="sum"/>
+<measureAssociate type:"directMeasure" description="apenas um modelo alvo" operation="CompVarComponentOperation">
+<atributeType="unit" type="directMeasure" class="Resultado da CompVariabilityClass"/>
+</measureAssociate>
+<measureElements type="scope">
+<class href="OwnedComment"/>
+</measureElements>
+<measureOperation name="CompVarComponentOperation" language="XPath" body="//packagedElement [@name = 'COMPONENTE'] or sum
+(name(//OwnedComment))"/>
+<measureElements type="trait" name="Complexidade"/>
+</measure>
+</metrics>
