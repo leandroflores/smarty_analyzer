@@ -1,2 +1,2 @@
-# smarty_analyzer
+# SMarty Analyzer
 PIBIC - UEM - 2016
